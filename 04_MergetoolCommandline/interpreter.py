@@ -43,10 +43,10 @@ class Interpreter(cmd.Cmd):
 
 
     def complete_language(self, text, line, begidx, endidx):
-        for langs in pynames.LANGUAGE.ALL:
+        for lang in pynames.LANGUAGE.ALL:
             if lang in line:
                 return []
-        return get_prefixes(pynames.LANGUAGE.ALL, text)
+        return self.get_prefixes(pynames.LANGUAGE.ALL, text)
 
 
     def do_generate(self, line):
